@@ -1,5 +1,5 @@
 # build container stage
-FROM stirlingx/lotus-build-env:latest AS build-env
+FROM weaming/lotus-build-env:latest AS build-env
 
 # branch or tag of the lotus version to build
 ARG BRANCH
@@ -19,7 +19,7 @@ RUN /bin/bash -c "source /root/.cargo/env" &&  make build
 RUN make install
 
 # runtime container stage
-FROM stirlingx/lotus-runtime:latest
+FROM weaming/lotus-runtime:latest
 
 COPY --from=build-env /usr/local/bin/lotus /usr/local/bin/lotus
 COPY --from=build-env /usr/local/bin/lotus-miner /usr/local/bin/lotus-miner
