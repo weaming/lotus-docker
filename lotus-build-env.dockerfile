@@ -1,5 +1,5 @@
 # build container stage
-FROM golang:1.15.2
+FROM golang:1.15.5
 
 RUN apt-get update -y && \
 	apt-get install curl git mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config clang -y
