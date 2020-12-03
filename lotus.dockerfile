@@ -15,7 +15,7 @@ RUN git clone https://github.com/filecoin-project/lotus.git --depth 1 --branch $
 
 WORKDIR /go/lotus
 
-RUN /bin/bash -c "source /root/.cargo/env" &&  make build
+RUN /bin/bash -c "source /root/.cargo/env" && make build
 RUN make install
 
 # runtime container stage

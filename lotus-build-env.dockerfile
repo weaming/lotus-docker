@@ -3,7 +3,7 @@ FROM golang:1.15.5
 
 COPY sources.list /etc/apt/sources.list
 RUN apt-get update -y && \
-	apt-get install curl git mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config clang -y
+	apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev -y
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o rustup-init.sh && \
 	chmod +x rustup-init.sh && \
